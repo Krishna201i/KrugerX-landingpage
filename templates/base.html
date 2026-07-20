@@ -46,35 +46,7 @@
     <!-- Vanilla Tilt for 3D Cards -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     
-    <!-- Status Polling JS -->
-    <script>
-        async function fetchStatus() {
-            const statusIndicator = document.getElementById('status-indicator');
-            const statusText = document.getElementById('status-text');
-            if(!statusIndicator) return;
-            
-            try {
-                const response = await fetch('/status');
-                const data = await response.json();
-                
-                statusText.innerText = data.message;
-                statusIndicator.className = 'status-dot';
-                if(data.status === 'online') {
-                    statusIndicator.classList.add('online');
-                } else if(data.status === 'degraded') {
-                    statusIndicator.classList.add('degraded');
-                } else {
-                    statusIndicator.classList.add('offline');
-                }
-            } catch (error) {
-                statusText.innerText = "Sanctum Integrity Unknown";
-                statusIndicator.className = 'status-dot offline';
-            }
-        }
-        
-        fetchStatus();
-        setInterval(fetchStatus, 30000);
-    </script>
+
     
     <!-- Mystical Live Animations -->
     <script src="{{ url_for('static', filename='js/mystical.js') }}"></script>
