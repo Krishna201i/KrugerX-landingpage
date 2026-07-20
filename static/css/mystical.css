@@ -1212,6 +1212,29 @@ section {
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
+    /* Fix platform cards on mobile */
+    .platform-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .platform-card {
+        width: 100%;
+        max-width: 320px;
+    }
+    
+    /* Fix mockup header on mobile */
+    .mockup-header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .mockup-tabs {
+        display: none;
+    }
+    .mockup-url-bar {
+        width: 100%;
+        margin-top: 10px;
+    }
+
     /* Header */
     .main-header {
         flex-direction: column;

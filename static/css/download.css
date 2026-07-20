@@ -654,6 +654,20 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .dl-tabs-wrap {
+        justify-content: flex-start;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .dl-tabs {
+        justify-content: flex-start;
+        width: 100%;
+    }
+    .dl-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
     .dl-hero { padding: 120px 5% 40px; }
     .dl-title { font-size: 2.8rem; }
     
