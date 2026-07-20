@@ -186,4 +186,26 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "power2.out",
         immediateRender: false
     });
+
+    // AI Node Expansion Logic
+    document.querySelectorAll('.ai-node').forEach(node => {
+        node.addEventListener('click', () => {
+            const isExpanded = node.classList.contains('expanded');
+            
+            // Close all nodes
+            document.querySelectorAll('.ai-node').forEach(n => n.classList.remove('expanded'));
+            
+            // If it wasn't already expanded, open it
+            if (!isExpanded) {
+                node.classList.add('expanded');
+                // Optional: Scroll slightly into view if it expands out of bounds
+                setTimeout(() => {
+                    const rect = node.getBoundingClientRect();
+                    if (rect.bottom > window.innerHeight) {
+                        window.scrollBy({ top: rect.bottom - window.innerHeight + 40, behavior: 'smooth' });
+                    }
+                }, 300);
+            }
+        });
+    });
 });

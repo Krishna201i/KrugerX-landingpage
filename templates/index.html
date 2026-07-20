@@ -24,7 +24,7 @@
     <nav class="nav-links">
         <a href="#features">Features</a>
         <a href="#ai">AI Models</a>
-        <a href="#download" class="nav-download">Download</a>
+        <a href="/download" class="nav-download">Download</a>
     </nav>
 </header>
 
@@ -125,8 +125,9 @@
         <div class="premium-card feature-card interactive" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-scale="1.05" data-cursor="hover">
             <div class="card-border"></div>
             <div class="card-content">
-                <div class="icon-wrapper privacy-icon">
+                <div class="icon-wrapper privacy-icon" style="display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; margin-bottom: 20px; border-radius: 12px; border: 1px solid rgba(255,153,0,0.2); background: rgba(255,153,0,0.05); position: relative;">
                     <div class="icon-glow"></div>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--eldritch-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: relative; z-index: 2;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                 </div>
                 <h3>Absolute Privacy</h3>
                 <p>Your data never leaves your control. End-to-end encrypted synchronization powered by our secure architecture.</p>
@@ -136,8 +137,9 @@
         <div class="premium-card feature-card interactive" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-scale="1.05" data-cursor="hover">
             <div class="card-border"></div>
             <div class="card-content">
-                <div class="icon-wrapper speed-icon">
+                <div class="icon-wrapper speed-icon" style="display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; margin-bottom: 20px; border-radius: 12px; border: 1px solid rgba(255,153,0,0.2); background: rgba(255,153,0,0.05); position: relative;">
                     <div class="icon-glow"></div>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--eldritch-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: relative; z-index: 2;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
                 </div>
                 <h3>Blazing Speed</h3>
                 <p>Lightning-fast page rendering and asynchronous backend processing to warp through the web without lag.</p>
@@ -147,8 +149,9 @@
         <div class="premium-card feature-card interactive" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-scale="1.05" data-cursor="hover">
             <div class="card-border"></div>
             <div class="card-content">
-                <div class="icon-wrapper sync-icon">
+                <div class="icon-wrapper sync-icon" style="display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; margin-bottom: 20px; border-radius: 12px; border: 1px solid rgba(255,153,0,0.2); background: rgba(255,153,0,0.05); position: relative;">
                     <div class="icon-glow"></div>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--eldritch-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: relative; z-index: 2;"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
                 </div>
                 <h3>Seamless Sync</h3>
                 <p>Instantly synchronize your tabs, history, and preferences across all your devices in real-time.</p>
@@ -172,6 +175,15 @@
                 <span class="node-name">OpenAI</span>
                 <span class="node-model">GPT-4o</span>
             </div>
+            <div class="node-details">
+                <p>OpenAI's flagship model offering unparalleled general reasoning capabilities, robust code generation, and advanced multimodal vision understanding.</p>
+                <ul>
+                    <li>General Reasoning</li>
+                    <li>Complex Coding</li>
+                    <li>Multimodal Vision</li>
+                    <li>Creative Writing</li>
+                </ul>
+            </div>
         </div>
         <div class="premium-card ai-node interactive" data-tilt data-tilt-scale="1.08" data-cursor="hover" style="--node-color:#4285f4">
             <div class="card-border" style="background:linear-gradient(135deg,rgba(66,133,244,0.5),rgba(66,133,244,0.05))"></div>
@@ -179,6 +191,15 @@
                 <div class="node-logo" style="background:linear-gradient(135deg,#4285f4,#ea4335,#fbbc05,#34a853)">G</div>
                 <span class="node-name">Gemini</span>
                 <span class="node-model">2.5 Pro</span>
+            </div>
+            <div class="node-details">
+                <p>Google's most advanced model featuring a massive 2M+ token context window, allowing you to feed entire codebases or hundreds of PDFs in a single prompt.</p>
+                <ul>
+                    <li>2M+ Token Context</li>
+                    <li>Deep Document Analysis</li>
+                    <li>Live Web Search</li>
+                    <li>Codebase Ingestion</li>
+                </ul>
             </div>
         </div>
         <div class="premium-card ai-node interactive" data-tilt data-tilt-scale="1.08" data-cursor="hover" style="--node-color:#c96442">
@@ -188,6 +209,15 @@
                 <span class="node-name">Anthropic</span>
                 <span class="node-model">Claude 4</span>
             </div>
+            <div class="node-details">
+                <p>Anthropic's latest model excels in nuanced human-like reasoning, producing exceptional technical writing and complex UI artifact generation.</p>
+                <ul>
+                    <li>Nuanced Writing</li>
+                    <li>UI Artifact Generation</li>
+                    <li>Refactoring Code</li>
+                    <li>Strategic Planning</li>
+                </ul>
+            </div>
         </div>
         <div class="premium-card ai-node interactive" data-tilt data-tilt-scale="1.08" data-cursor="hover" style="--node-color:#f55036">
             <div class="card-border" style="background:linear-gradient(135deg,rgba(245,80,54,0.5),rgba(245,80,54,0.05))"></div>
@@ -196,6 +226,15 @@
                 <span class="node-name">Groq</span>
                 <span class="node-model">Llama 3.1</span>
             </div>
+            <div class="node-details">
+                <p>Powered by Groq's custom LPU hardware, delivering open-weight models like Llama 3.1 at blazing-fast speeds exceeding 800 tokens per second.</p>
+                <ul>
+                    <li>Ultra-Low Latency</li>
+                    <li>800+ Tokens per sec</li>
+                    <li>Instant Autocomplete</li>
+                    <li>Rapid Prototyping</li>
+                </ul>
+            </div>
         </div>
         <div class="premium-card ai-node local-node interactive" data-tilt data-tilt-scale="1.08" data-cursor="hover" style="--node-color:#00E676">
             <div class="card-border local-border"></div>
@@ -203,6 +242,15 @@
                 <div class="node-logo" style="background:linear-gradient(135deg,#00E676,#00b359)">🦙</div>
                 <span class="node-name local-text">Ollama</span>
                 <span class="node-model local-text">Local · Private</span>
+            </div>
+            <div class="node-details">
+                <p>Run AI models directly on your hardware. KrugerX integrates seamlessly with Ollama, ensuring your data never leaves your machine. 100% private, 100% offline.</p>
+                <ul>
+                    <li>Zero Telemetry</li>
+                    <li>Works Offline</li>
+                    <li>Uncensored Output</li>
+                    <li>Hardware Accelerated</li>
+                </ul>
             </div>
         </div>
     </div>
@@ -214,7 +262,7 @@
         <h2>Ready to Browse <span class="highlight">Without Limits?</span></h2>
         <p>Available on every platform you live on &mdash; desktop, server, and mobile.</p>
         <div class="platform-grid">
-            <a href="#" class="platform-card interactive" data-cursor="hover">
+            <a href="/download#windows" class="platform-card interactive" data-cursor="hover">
                 <div class="platform-icon">
                     <!-- Windows logo -->
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
@@ -222,7 +270,7 @@
                 <span class="platform-name">Windows</span>
                 <span class="platform-sub">10 / 11 · x64 &amp; ARM</span>
             </a>
-            <a href="#" class="platform-card interactive" data-cursor="hover">
+            <a href="/download#macos" class="platform-card interactive" data-cursor="hover">
                 <div class="platform-icon">
                     <!-- Apple logo -->
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
@@ -230,7 +278,7 @@
                 <span class="platform-name">macOS</span>
                 <span class="platform-sub">12+ · Apple Silicon &amp; Intel</span>
             </a>
-            <a href="#" class="platform-card interactive" data-cursor="hover">
+            <a href="/download#linux" class="platform-card interactive" data-cursor="hover">
                 <div class="platform-icon">
                     <!-- Linux Tux -->
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 0 0-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.06.045.12.078.182.23.49.49.716.54.924a2.65 2.65 0 0 1-.027.443c-.07.527-.26 1.2-.197 1.795.095.884.636 1.7 1.685 1.7.876 0 1.54-.52 1.858-1.273.4-.96.364-2.166-.177-3.099-.227-.39-.512-.71-.761-.96a4.97 4.97 0 0 0 .108-.783c.048-.498.016-1.01-.103-1.494-.174-.705-.543-1.268-1.194-1.596.076-.118.14-.24.196-.362.18-.43.26-.92.196-1.383a2.784 2.784 0 0 0-.263-.867 2.47 2.47 0 0 0 .08-.196c.253-.777.11-1.714-.098-2.585-.192-.78-.52-1.512-.93-2.116-.54-.805-1.195-1.44-1.77-1.86-.486-.363-.91-.618-1.248-.814a4.71 4.71 0 0 0-.343-.184c-.17-.088-.334-.165-.485-.23-.31-.13-.566-.228-.786-.3a2.884 2.884 0 0 0-.38-.088c-.154-.027-.312-.04-.474-.04z"/></svg>
@@ -238,7 +286,7 @@
                 <span class="platform-name">Linux</span>
                 <span class="platform-sub">.deb / .rpm / AppImage</span>
             </a>
-            <a href="#" class="platform-card interactive" data-cursor="hover">
+            <a href="/download#ios" class="platform-card interactive" data-cursor="hover">
                 <div class="platform-icon">
                     <!-- iOS App Store -->
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M8.809 0c-.48.002-.96.182-1.326.548L.548 7.483A1.875 1.875 0 0 0 0 8.809v6.382c0 .48.182.96.548 1.326l6.935 6.935c.366.366.846.548 1.326.548h6.382c.48 0 .96-.182 1.326-.548l6.935-6.935c.366-.366.548-.846.548-1.326V8.809a1.875 1.875 0 0 0-.548-1.326L16.517.548A1.875 1.875 0 0 0 15.191 0zm3.196 4.5a.75.75 0 0 1 .75.75v3.75h3.75a.75.75 0 0 1 0 1.5h-3.75v3.75a.75.75 0 0 1-1.5 0V10.5H7.505a.75.75 0 0 1 0-1.5h3.75V5.25a.75.75 0 0 1 .75-.75z"/></svg>
@@ -246,7 +294,7 @@
                 <span class="platform-name">iOS</span>
                 <span class="platform-sub">iPhone &amp; iPad · iOS 16+</span>
             </a>
-            <a href="#" class="platform-card interactive" data-cursor="hover">
+            <a href="/download#android" class="platform-card interactive" data-cursor="hover">
                 <div class="platform-icon">
                     <!-- Android -->
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4483-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993.0001.5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4483-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993 0 .5511-.4483.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 0 0-.1521-.5676.416.416 0 0 0-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1367 1.0729L4.841 5.4207a.4161.4161 0 0 0-.5677-.1521.4157.4157 0 0 0-.1521.5676l1.9973 3.4592C2.6889 10.1867.3432 13.2754 0 17.0082h24c-.3435-3.7328-2.6892-6.8215-6.1185-8.6868"/></svg>

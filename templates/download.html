@@ -1,0 +1,800 @@
+{% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/download.css') }}">
+{% endblock %}
+
+{% block content %}
+<canvas id="mystical-canvas"></canvas>
+
+<!-- Header -->
+<header class="main-header interactive" data-cursor="hover">
+    <a href="/" class="logo">Kruger<span class="highlight">X</span></a>
+    <nav class="nav-links">
+        <a href="/#features">Features</a>
+        <a href="/#ai">AI Models</a>
+        <a href="/download" class="nav-download">Download</a>
+    </nav>
+</header>
+
+<!-- Page Hero -->
+<section class="dl-hero">
+    <div class="dl-hero-inner reveal-fade">
+        <div class="dl-badge">v1.0.0 &nbsp;&middot;&nbsp; Free Forever &nbsp;&middot;&nbsp; Open Source</div>
+        <h1 class="dl-title">Download <span class="highlight">KrugerX</span></h1>
+        <p class="dl-subtitle">Available across every platform you call home &mdash; desktop, mobile, and beyond.</p>
+        <div class="dl-platform-icons">
+            <span title="Windows">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+            </span>
+            <span title="macOS">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            </span>
+            <span title="Linux">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 0 0-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.06.045.12.078.182.23.49.49.716.54.924a2.65 2.65 0 0 1-.027.443c-.07.527-.26 1.2-.197 1.795.095.884.636 1.7 1.685 1.7.876 0 1.54-.52 1.858-1.273.4-.96.364-2.166-.177-3.099-.227-.39-.512-.71-.761-.96a4.97 4.97 0 0 0 .108-.783c.048-.498.016-1.01-.103-1.494-.174-.705-.543-1.268-1.194-1.596.076-.118.14-.24.196-.362.18-.43.26-.92.196-1.383a2.784 2.784 0 0 0-.263-.867 2.47 2.47 0 0 0 .08-.196c.253-.777.11-1.714-.098-2.585-.192-.78-.52-1.512-.93-2.116-.54-.805-1.195-1.44-1.77-1.86-.486-.363-.91-.618-1.248-.814a4.71 4.71 0 0 0-.343-.184c-.17-.088-.334-.165-.485-.23-.31-.13-.566-.228-.786-.3a2.884 2.884 0 0 0-.38-.088c-.154-.027-.312-.04-.474-.04z"/></svg>
+            </span>
+            <span title="iOS">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            </span>
+            <span title="Android">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4483-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993.0001.5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4483-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993 0 .5511-.4483.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 0 0-.1521-.5676.416.416 0 0 0-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1367 1.0729L4.841 5.4207a.4161.4161 0 0 0-.5677-.1521.4157.4157 0 0 0-.1521.5676l1.9973 3.4592C2.6889 10.1867.3432 13.2754 0 17.0082h24c-.3435-3.7328-2.6892-6.8215-6.1185-8.6868"/></svg>
+            </span>
+        </div>
+    </div>
+</section>
+
+<!-- Sticky Platform Tab Bar -->
+<div class="dl-tabs-wrap" id="dl-tabs">
+    <div class="dl-tabs">
+        <button class="dl-tab active" data-platform="windows" id="tab-windows">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+            Windows
+        </button>
+        <button class="dl-tab" data-platform="macos" id="tab-macos">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            macOS
+        </button>
+        <button class="dl-tab" data-platform="linux" id="tab-linux">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 0 0-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.06.045.12.078.182.23.49.49.716.54.924a2.65 2.65 0 0 1-.027.443c-.07.527-.26 1.2-.197 1.795.095.884.636 1.7 1.685 1.7.876 0 1.54-.52 1.858-1.273.4-.96.364-2.166-.177-3.099-.227-.39-.512-.71-.761-.96a4.97 4.97 0 0 0 .108-.783c.048-.498.016-1.01-.103-1.494-.174-.705-.543-1.268-1.194-1.596.076-.118.14-.24.196-.362.18-.43.26-.92.196-1.383a2.784 2.784 0 0 0-.263-.867 2.47 2.47 0 0 0 .08-.196c.253-.777.11-1.714-.098-2.585-.192-.78-.52-1.512-.93-2.116-.54-.805-1.195-1.44-1.77-1.86-.486-.363-.91-.618-1.248-.814a4.71 4.71 0 0 0-.343-.184c-.17-.088-.334-.165-.485-.23-.31-.13-.566-.228-.786-.3a2.884 2.884 0 0 0-.38-.088c-.154-.027-.312-.04-.474-.04z"/></svg>
+            Linux
+        </button>
+        <button class="dl-tab" data-platform="ios" id="tab-ios">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            iOS
+        </button>
+        <button class="dl-tab" data-platform="android" id="tab-android">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4483-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993.0001.5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4483-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993 0 .5511-.4483.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 0 0-.1521-.5676.416.416 0 0 0-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1367 1.0729L4.841 5.4207a.4161.4161 0 0 0-.5677-.1521.4157.4157 0 0 0-.1521.5676l1.9973 3.4592C2.6889 10.1867.3432 13.2754 0 17.0082h24c-.3435-3.7328-2.6892-6.8215-6.1185-8.6868"/></svg>
+            Android
+        </button>
+    </div>
+</div>
+
+<!-- Platform Panels -->
+<div class="dl-panels-wrap">
+
+    <!-- ========== WINDOWS ========== -->
+    <div class="dl-panel active" id="panel-windows">
+        <div class="dl-panel-header">
+            <div class="dl-platform-logo win-logo">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+            </div>
+            <div class="dl-platform-info">
+                <h2>KrugerX for <span class="highlight">Windows</span></h2>
+                <p class="dl-meta">Version 1.0.0 &nbsp;&middot;&nbsp; 128 MB &nbsp;&middot;&nbsp; Released July 2026</p>
+                <div class="dl-buttons">
+                    <a href="#" class="dl-btn primary interactive" data-cursor="portal" id="win-download-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        Download .exe (x64)
+                    </a>
+                    <a href="#" class="dl-btn ghost interactive" data-cursor="hover">ARM64 Build</a>
+                    <a href="#" class="dl-btn ghost interactive" data-cursor="hover">.zip Portable</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="dl-requirements">
+            <h3 class="dl-section-title">System Requirements</h3>
+            <div class="req-grid">
+                <div class="req-item">
+                    <span class="req-label">OS</span>
+                    <span class="req-value">Windows 10 (v1903+) or Windows 11</span>
+                </div>
+                <div class="req-item">
+                    <span class="req-label">CPU</span>
+                    <span class="req-value">x64 or ARM64 processor</span>
+                </div>
+                <div class="req-item">
+                    <span class="req-label">RAM</span>
+                    <span class="req-value">4 GB minimum &nbsp;·&nbsp; 8 GB recommended</span>
+                </div>
+                <div class="req-item">
+                    <span class="req-label">Storage</span>
+                    <span class="req-value">600 MB free disk space</span>
+                </div>
+                <div class="req-item">
+                    <span class="req-label">Network</span>
+                    <span class="req-value">Internet required for AI model features</span>
+                </div>
+                <div class="req-item">
+                    <span class="req-label">GPU</span>
+                    <span class="req-value">DirectX 11 capable GPU (for hardware acceleration)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="dl-steps-section">
+            <h3 class="dl-section-title">Installation Guide</h3>
+            <div class="dl-steps">
+                <div class="dl-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h4>Download the Installer</h4>
+                        <p>Click the <strong>Download .exe (x64)</strong> button above. The file <code>KrugerX-Setup-1.0.0-x64.exe</code> (~128 MB) will begin downloading to your Downloads folder.</p>
+                    </div>
+                </div>
+                <div class="dl-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h4>Run the Installer</h4>
+                        <p>Double-click the downloaded file. Windows UAC will ask <em>"Do you want to allow this app to make changes?"</em> — click <strong>Yes</strong> to continue.</p>
+                        <div class="dl-callout warning">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                            If Windows Defender SmartScreen shows a blue "Windows protected your PC" dialog, click <strong>More info</strong> &rarr; <strong>Run anyway</strong>. KrugerX is safe — this appears because the app is new and not yet in Microsoft's catalog.
+                        </div>
+                    </div>
+                </div>
+                <div class="dl-step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h4>Choose Install Location</h4>
+                        <p>The installer defaults to <code>C:\Program Files\KrugerX\</code>. We recommend keeping the default. Click <strong>Install</strong> to proceed. Installation takes approximately 30 seconds.</p>
+                    </div>
+                </div>
+                <div class="dl-step">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <h4>Launch KrugerX</h4>
+                        <p>After installation completes, KrugerX opens automatically. You'll find it in your Start Menu and a shortcut on your Desktop. The app also appears in your system tray when minimized.</p>
+                    </div>
+                </div>
+                <div class="dl-step">
+                    <div class="step-num">5</div>
+                    <div class="step-content">
+                        <h4>Complete Onboarding</h4>
+                        <p>The first-launch wizard lets you: import bookmarks from Chrome/Edge/Firefox, set your privacy level (Standard, Strict, or Maximum), choose your default AI model, and optionally create a KrugerX account for cross-device sync.</p>
+                        <div class="dl-callout info">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                            You can skip account creation and continue as a guest. Sync features will be unavailable, but all local browsing features work fully offline.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== MACOS ========== -->
+    <div class="dl-panel" id="panel-macos">
+        <div class="dl-panel-header">
+            <div class="dl-platform-logo mac-logo">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            </div>
+            <div class="dl-platform-info">
+                <h2>KrugerX for <span class="highlight">macOS</span></h2>
+                <p class="dl-meta">Version 1.0.0 &nbsp;&middot;&nbsp; 145 MB &nbsp;&middot;&nbsp; Released July 2026</p>
+                <div class="dl-buttons">
+                    <a href="#" class="dl-btn primary interactive" data-cursor="portal">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        Download .dmg (Apple Silicon)
+                    </a>
+                    <a href="#" class="dl-btn ghost interactive" data-cursor="hover">Intel .dmg</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="dl-requirements">
+            <h3 class="dl-section-title">System Requirements</h3>
+            <div class="req-grid">
+                <div class="req-item">
+                    <span class="req-label">OS</span>
+                    <span class="req-value">macOS 12 Monterey or later</span>
+                </div>
+                <div class="req-item">
+                    <span class="req-label">Chip</span>
+                    <span class="req-value">Apple Silicon (M1/M2/M3) or Intel Core i5+</span>
+                </div>
+                <div class="req-item">
+                    <span class="req-label">RAM</span>
+                    <span class="req-value">4 GB minimum &nbsp;·&nbsp; 8 GB recommended</span>
+                </div>
+                <div class="req-item">
+                    <span class="req-label">Storage</span>
+                    <span class="req-value">700 MB free disk space</span>
+                </div>
+                <div class="req-item">
+                    <span class="req-label">Network</span>
+                    <span class="req-value">Broadband connection for AI features</span>
+                </div>
+                <div class="req-item">
+                    <span class="req-label">Permissions</span>
+                    <span class="req-value">Accessibility, Notifications (optional)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="dl-steps-section">
+            <h3 class="dl-section-title">Installation Guide</h3>
+            <div class="dl-steps">
+                <div class="dl-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h4>Download the .dmg</h4>
+                        <p>Select the correct build: <strong>Apple Silicon</strong> for M1/M2/M3 Macs (recommended for 2020+ Macs), or <strong>Intel</strong> for older Intel Macs. The file is approximately 145 MB.</p>
+                    </div>
+                </div>
+                <div class="dl-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h4>Open the Disk Image</h4>
+                        <p>Double-click the downloaded <code>.dmg</code> file. A window appears showing the KrugerX icon and your Applications folder. <strong>Drag KrugerX into the Applications folder</strong> to install it.</p>
+                    </div>
+                </div>
+                <div class="dl-step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h4>Handle macOS Gatekeeper</h4>
+                        <p>The first time you open KrugerX, macOS will block it with a message about an unidentified developer. To bypass this:</p>
+                        <ol class="dl-substeps">
+                            <li>Go to <strong>System Settings &rarr; Privacy &amp; Security</strong></li>
+                            <li>Scroll down to find the KrugerX entry</li>
+                            <li>Click <strong>"Open Anyway"</strong></li>
+                        </ol>
+                        <div class="dl-callout info">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                            Alternatively, right-click (or Control-click) the KrugerX app in Finder &rarr; select <strong>Open</strong> &rarr; click <strong>Open</strong> in the dialog.
+                        </div>
+                    </div>
+                </div>
+                <div class="dl-step">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <h4>Grant Permissions</h4>
+                        <p>KrugerX will request: <strong>Notifications</strong> (for sync alerts and AI responses), <strong>Accessibility</strong> (for keyboard shortcuts), and optionally <strong>Full Disk Access</strong> for bookmark import. Each permission prompt can be accepted or skipped.</p>
+                    </div>
+                </div>
+                <div class="dl-step">
+                    <div class="step-num">5</div>
+                    <div class="step-content">
+                        <h4>Complete Onboarding &amp; Eject the .dmg</h4>
+                        <p>Complete the first-launch setup wizard. Once done, you can eject the disk image (drag it to Trash or right-click &rarr; Eject in Finder) and delete the original <code>.dmg</code> file from your Downloads folder.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== LINUX ========== -->
+    <div class="dl-panel" id="panel-linux">
+        <div class="dl-panel-header">
+            <div class="dl-platform-logo linux-logo">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 0 0-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.06.045.12.078.182.23.49.49.716.54.924a2.65 2.65 0 0 1-.027.443c-.07.527-.26 1.2-.197 1.795.095.884.636 1.7 1.685 1.7.876 0 1.54-.52 1.858-1.273.4-.96.364-2.166-.177-3.099-.227-.39-.512-.71-.761-.96a4.97 4.97 0 0 0 .108-.783c.048-.498.016-1.01-.103-1.494-.174-.705-.543-1.268-1.194-1.596.076-.118.14-.24.196-.362.18-.43.26-.92.196-1.383a2.784 2.784 0 0 0-.263-.867 2.47 2.47 0 0 0 .08-.196c.253-.777.11-1.714-.098-2.585-.192-.78-.52-1.512-.93-2.116-.54-.805-1.195-1.44-1.77-1.86-.486-.363-.91-.618-1.248-.814a4.71 4.71 0 0 0-.343-.184c-.17-.088-.334-.165-.485-.23-.31-.13-.566-.228-.786-.3a2.884 2.884 0 0 0-.38-.088c-.154-.027-.312-.04-.474-.04z"/></svg>
+            </div>
+            <div class="dl-platform-info">
+                <h2>KrugerX for <span class="highlight">Linux</span></h2>
+                <p class="dl-meta">Version 1.0.0 &nbsp;&middot;&nbsp; Multiple formats &nbsp;&middot;&nbsp; Released July 2026</p>
+                <div class="dl-buttons">
+                    <a href="#" class="dl-btn primary interactive" data-cursor="portal">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        Download .deb (Ubuntu/Debian)
+                    </a>
+                    <a href="#" class="dl-btn ghost interactive" data-cursor="hover">.rpm (Fedora/RHEL)</a>
+                    <a href="#" class="dl-btn ghost interactive" data-cursor="hover">AppImage</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="dl-requirements">
+            <h3 class="dl-section-title">System Requirements</h3>
+            <div class="req-grid">
+                <div class="req-item">
+                    <span class="req-label">Distros</span>
+                    <span class="req-value">Ubuntu 20.04+, Debian 11+, Fedora 35+, Arch</span>
+                </div>
+                <div class="req-item">
+                    <span class="req-label">glibc</span>
+                    <span class="req-value">2.31 or later</span>
+                </div>
+                <div class="req-item">
+                    <span class="req-label">CPU</span>
+                    <span class="req-value">x86_64 or ARM64</span>
+                </div>
+                <div class="req-item">
+                    <span class="req-label">RAM</span>
+                    <span class="req-value">4 GB minimum &nbsp;·&nbsp; 8 GB recommended</span>
+                </div>
+                <div class="req-item">
+                    <span class="req-label">Storage</span>
+                    <span class="req-value">500 MB free disk space</span>
+                </div>
+                <div class="req-item">
+                    <span class="req-label">Display</span>
+                    <span class="req-value">X11 or Wayland</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="dl-steps-section">
+            <h3 class="dl-section-title">Installation Guide</h3>
+
+            <!-- Method tabs -->
+            <div class="linux-method-tabs">
+                <button class="linux-tab active" data-method="deb">Ubuntu / Debian</button>
+                <button class="linux-tab" data-method="rpm">Fedora / RHEL</button>
+                <button class="linux-tab" data-method="appimage">AppImage</button>
+                <button class="linux-tab" data-method="flatpak">Flatpak</button>
+            </div>
+
+            <!-- Ubuntu/Debian -->
+            <div class="linux-method active" id="method-deb">
+                <div class="dl-steps">
+                    <div class="dl-step">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <h4>Download the .deb Package</h4>
+                            <p>Click "Download .deb" above, or fetch it via terminal:</p>
+                            <div class="code-block">
+                                <div class="code-header"><span>Terminal</span><button class="copy-btn" data-copy="wget https://releases.krugerx.com/1.0.0/krugerx_1.0.0_amd64.deb">Copy</button></div>
+                                <pre><code>wget https://releases.krugerx.com/1.0.0/krugerx_1.0.0_amd64.deb</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dl-step">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <h4>Install the Package</h4>
+                            <p>Use <code>apt</code> (recommended — handles dependencies automatically):</p>
+                            <div class="code-block">
+                                <div class="code-header"><span>Terminal</span><button class="copy-btn" data-copy="sudo apt install ./krugerx_1.0.0_amd64.deb">Copy</button></div>
+                                <pre><code>sudo apt install ./krugerx_1.0.0_amd64.deb</code></pre>
+                            </div>
+                            <p style="margin-top:10px">Or with <code>dpkg</code> followed by dependency fix:</p>
+                            <div class="code-block">
+                                <div class="code-header"><span>Terminal</span><button class="copy-btn" data-copy="sudo dpkg -i krugerx_1.0.0_amd64.deb&#10;sudo apt-get install -f">Copy</button></div>
+                                <pre><code>sudo dpkg -i krugerx_1.0.0_amd64.deb
+sudo apt-get install -f</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dl-step">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <h4>Launch KrugerX</h4>
+                            <p>Find KrugerX in your application menu, or run from terminal:</p>
+                            <div class="code-block">
+                                <div class="code-header"><span>Terminal</span><button class="copy-btn" data-copy="krugerx">Copy</button></div>
+                                <pre><code>krugerx</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dl-step">
+                        <div class="step-num">4</div>
+                        <div class="step-content">
+                            <h4>Enable Auto-Updates (Optional)</h4>
+                            <p>Add the KrugerX repository for automatic updates:</p>
+                            <div class="code-block">
+                                <div class="code-header"><span>Terminal</span><button class="copy-btn" data-copy="curl -fsSL https://repo.krugerx.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/krugerx.gpg&#10;echo &quot;deb [signed-by=/usr/share/keyrings/krugerx.gpg] https://repo.krugerx.com/apt stable main&quot; | sudo tee /etc/apt/sources.list.d/krugerx.list&#10;sudo apt update">Copy</button></div>
+                                <pre><code>curl -fsSL https://repo.krugerx.com/gpg | sudo gpg --dearmor \
+    -o /usr/share/keyrings/krugerx.gpg
+echo "deb [signed-by=/usr/share/keyrings/krugerx.gpg] \
+    https://repo.krugerx.com/apt stable main" \
+    | sudo tee /etc/apt/sources.list.d/krugerx.list
+sudo apt update</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fedora/RHEL -->
+            <div class="linux-method" id="method-rpm">
+                <div class="dl-steps">
+                    <div class="dl-step">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <h4>Download the .rpm Package</h4>
+                            <div class="code-block">
+                                <div class="code-header"><span>Terminal</span><button class="copy-btn" data-copy="wget https://releases.krugerx.com/1.0.0/krugerx-1.0.0.x86_64.rpm">Copy</button></div>
+                                <pre><code>wget https://releases.krugerx.com/1.0.0/krugerx-1.0.0.x86_64.rpm</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dl-step">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <h4>Install with DNF (Fedora) or YUM (RHEL/CentOS)</h4>
+                            <div class="code-block">
+                                <div class="code-header"><span>Fedora</span><button class="copy-btn" data-copy="sudo dnf install ./krugerx-1.0.0.x86_64.rpm">Copy</button></div>
+                                <pre><code>sudo dnf install ./krugerx-1.0.0.x86_64.rpm</code></pre>
+                            </div>
+                            <div class="code-block" style="margin-top:10px">
+                                <div class="code-header"><span>RHEL / CentOS</span><button class="copy-btn" data-copy="sudo yum install ./krugerx-1.0.0.x86_64.rpm">Copy</button></div>
+                                <pre><code>sudo yum install ./krugerx-1.0.0.x86_64.rpm</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dl-step">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <h4>Launch KrugerX</h4>
+                            <div class="code-block">
+                                <div class="code-header"><span>Terminal</span><button class="copy-btn" data-copy="krugerx">Copy</button></div>
+                                <pre><code>krugerx</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AppImage -->
+            <div class="linux-method" id="method-appimage">
+                <div class="dl-steps">
+                    <div class="dl-step">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <h4>Download the AppImage</h4>
+                            <div class="code-block">
+                                <div class="code-header"><span>Terminal</span><button class="copy-btn" data-copy="wget https://releases.krugerx.com/1.0.0/KrugerX-1.0.0-x86_64.AppImage">Copy</button></div>
+                                <pre><code>wget https://releases.krugerx.com/1.0.0/KrugerX-1.0.0-x86_64.AppImage</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dl-step">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <h4>Make Executable and Run</h4>
+                            <div class="code-block">
+                                <div class="code-header"><span>Terminal</span><button class="copy-btn" data-copy="chmod +x KrugerX-1.0.0-x86_64.AppImage&#10;./KrugerX-1.0.0-x86_64.AppImage">Copy</button></div>
+                                <pre><code>chmod +x KrugerX-1.0.0-x86_64.AppImage
+./KrugerX-1.0.0-x86_64.AppImage</code></pre>
+                            </div>
+                            <div class="dl-callout info">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                                AppImage runs with no installation required. Move it anywhere on your system and it works. No root privileges needed.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flatpak -->
+            <div class="linux-method" id="method-flatpak">
+                <div class="dl-steps">
+                    <div class="dl-step">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <h4>Install via Flathub</h4>
+                            <div class="code-block">
+                                <div class="code-header"><span>Terminal</span><button class="copy-btn" data-copy="flatpak install flathub com.krugerx.Browser">Copy</button></div>
+                                <pre><code>flatpak install flathub com.krugerx.Browser</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dl-step">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <h4>Run</h4>
+                            <div class="code-block">
+                                <div class="code-header"><span>Terminal</span><button class="copy-btn" data-copy="flatpak run com.krugerx.Browser">Copy</button></div>
+                                <pre><code>flatpak run com.krugerx.Browser</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== iOS ========== -->
+    <div class="dl-panel" id="panel-ios">
+        <div class="dl-panel-header">
+            <div class="dl-platform-logo ios-logo">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            </div>
+            <div class="dl-platform-info">
+                <h2>KrugerX for <span class="highlight">iOS</span></h2>
+                <p class="dl-meta">Version 1.0.0 &nbsp;&middot;&nbsp; 48 MB &nbsp;&middot;&nbsp; App Store &nbsp;&middot;&nbsp; Free</p>
+                <div class="dl-buttons">
+                    <a href="#" class="dl-btn primary interactive" data-cursor="portal">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                        Get on App Store
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="dl-requirements">
+            <h3 class="dl-section-title">Requirements</h3>
+            <div class="req-grid">
+                <div class="req-item">
+                    <span class="req-label">iOS Version</span>
+                    <span class="req-value">iOS 16.0 or later</span>
+                </div>
+                <div class="req-item">
+                    <span class="req-label">Device</span>
+                    <span class="req-value">iPhone 8 / iPad 6th gen or newer</span>
+                </div>
+                <div class="req-item">
+                    <span class="req-label">Storage</span>
+                    <span class="req-value">150 MB free space</span>
+                </div>
+                <div class="req-item">
+                    <span class="req-label">Chip</span>
+                    <span class="req-value">Apple A12 Bionic or later</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="dl-steps-section">
+            <h3 class="dl-section-title">Installation Guide</h3>
+            <div class="dl-steps">
+                <div class="dl-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h4>Open the App Store</h4>
+                        <p>Tap <strong>Get on App Store</strong> above, or search for <strong>"KrugerX Browser"</strong> in the App Store app on your iPhone or iPad.</p>
+                    </div>
+                </div>
+                <div class="dl-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h4>Install the App</h4>
+                        <p>Tap the <strong>Get</strong> button (or the cloud icon if previously downloaded). Confirm with <strong>Face ID, Touch ID</strong>, or your Apple ID password. The app is free — no payment required.</p>
+                    </div>
+                </div>
+                <div class="dl-step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h4>Open KrugerX</h4>
+                        <p>Tap <strong>Open</strong> from the App Store, or find the KrugerX icon on your Home Screen. The app launches into a brief onboarding tour (~30 seconds).</p>
+                    </div>
+                </div>
+                <div class="dl-step">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <h4>Allow Notifications (Recommended)</h4>
+                        <p>KrugerX will ask to send you notifications for sync confirmations and AI response completion alerts. Tap <strong>Allow</strong> to enable — you can adjust this anytime in Settings &rarr; KrugerX.</p>
+                    </div>
+                </div>
+                <div class="dl-step">
+                    <div class="step-num">5</div>
+                    <div class="step-content">
+                        <h4>Set as Default Browser (iOS 14+)</h4>
+                        <p>Go to <strong>Settings &rarr; KrugerX &rarr; Default Browser App &rarr; KrugerX</strong>. Links tapped in Mail, Messages, and other apps will now open in KrugerX.</p>
+                        <div class="dl-callout info">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                            Sign in with your KrugerX account to sync bookmarks, history, and open tabs across all your devices (iPhone, iPad, Mac, Windows, Android).
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ANDROID ========== -->
+    <div class="dl-panel" id="panel-android">
+        <div class="dl-panel-header">
+            <div class="dl-platform-logo android-logo">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4483-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993.0001.5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4483-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993 0 .5511-.4483.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 0 0-.1521-.5676.416.416 0 0 0-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1367 1.0729L4.841 5.4207a.4161.4161 0 0 0-.5677-.1521.4157.4157 0 0 0-.1521.5676l1.9973 3.4592C2.6889 10.1867.3432 13.2754 0 17.0082h24c-.3435-3.7328-2.6892-6.8215-6.1185-8.6868"/></svg>
+            </div>
+            <div class="dl-platform-info">
+                <h2>KrugerX for <span class="highlight">Android</span></h2>
+                <p class="dl-meta">Version 1.0.0 &nbsp;&middot;&nbsp; 52 MB &nbsp;&middot;&nbsp; Google Play &nbsp;&middot;&nbsp; Free</p>
+                <div class="dl-buttons">
+                    <a href="#" class="dl-btn primary interactive" data-cursor="portal">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4483-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993.0001.5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4483-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993 0 .5511-.4483.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 0 0-.1521-.5676.416.416 0 0 0-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1367 1.0729L4.841 5.4207a.4161.4161 0 0 0-.5677-.1521.4157.4157 0 0 0-.1521.5676l1.9973 3.4592C2.6889 10.1867.3432 13.2754 0 17.0082h24c-.3435-3.7328-2.6892-6.8215-6.1185-8.6868"/></svg>
+                        Get on Google Play
+                    </a>
+                    <a href="#" class="dl-btn ghost interactive" data-cursor="hover">Download APK</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="dl-requirements">
+            <h3 class="dl-section-title">Requirements</h3>
+            <div class="req-grid">
+                <div class="req-item">
+                    <span class="req-label">Android</span>
+                    <span class="req-value">Android 10.0 (API 29) or later</span>
+                </div>
+                <div class="req-item">
+                    <span class="req-label">Architecture</span>
+                    <span class="req-value">ARM64 (v8a) or x86_64</span>
+                </div>
+                <div class="req-item">
+                    <span class="req-label">RAM</span>
+                    <span class="req-value">3 GB minimum &nbsp;·&nbsp; 6 GB recommended</span>
+                </div>
+                <div class="req-item">
+                    <span class="req-label">Storage</span>
+                    <span class="req-value">200 MB free space</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="dl-steps-section">
+            <h3 class="dl-section-title">Installation Guide</h3>
+            <div class="dl-steps">
+                <div class="dl-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h4>Open Google Play</h4>
+                        <p>Tap <strong>Get on Google Play</strong> above, or search for <strong>"KrugerX Browser"</strong> in the Google Play Store app.</p>
+                    </div>
+                </div>
+                <div class="dl-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h4>Tap Install</h4>
+                        <p>Tap the <strong>Install</strong> button. The app is free. Google Play may ask you to confirm your Google account. The download is approximately 52 MB.</p>
+                    </div>
+                </div>
+                <div class="dl-step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h4>Open KrugerX</h4>
+                        <p>Tap <strong>Open</strong> from Play Store, or find the KrugerX icon in your app drawer. The first launch initializes the browser engine (~5 seconds).</p>
+                    </div>
+                </div>
+                <div class="dl-step">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <h4>Grant Permissions</h4>
+                        <p>KrugerX will request: <strong>Storage</strong> (for downloads), <strong>Notifications</strong> (for sync and AI alerts). Both are optional — you can deny them and still browse normally.</p>
+                    </div>
+                </div>
+                <div class="dl-step">
+                    <div class="step-num">5</div>
+                    <div class="step-content">
+                        <h4>Set as Default Browser</h4>
+                        <p>Go to <strong>Settings &rarr; Apps &rarr; Default apps &rarr; Browser app &rarr; KrugerX</strong>. The exact path varies by Android version and manufacturer.</p>
+                        <div class="dl-callout info">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                            Alternatively, install via the direct APK for devices without Google Play. Enable "Install from unknown sources" in Settings &rarr; Security first.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div><!-- end dl-panels-wrap -->
+
+<!-- FAQ Strip -->
+<section class="dl-faq-section">
+    <div class="dl-faq-inner">
+        <h2 class="dl-section-title" style="text-align:center; margin-bottom:3rem">Frequently Asked <span class="highlight">Questions</span></h2>
+        <div class="faq-grid">
+            <details class="faq-item">
+                <summary>Is KrugerX really free?</summary>
+                <p>Yes. KrugerX is free forever with no hidden fees. AI model usage may require API keys from the respective providers (OpenAI, Anthropic, etc.), but all core browser features are completely free.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Is KrugerX open source?</summary>
+                <p>Yes. KrugerX is open source under the MIT License. You can view, fork, and contribute on our GitHub repository.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Does KrugerX collect my data?</summary>
+                <p>No. KrugerX uses zero-knowledge encryption for all sync data. We cannot read your browsing history, bookmarks, or passwords. There is no telemetry by default.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Can I import from Chrome or Firefox?</summary>
+                <p>Yes. The first-launch wizard lets you import bookmarks, history, saved passwords, and extensions from Chrome, Firefox, Edge, and Safari with one click.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Do I need an account to use KrugerX?</summary>
+                <p>No. You can use KrugerX fully as a guest. An account is only required if you want to sync data across devices.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Which AI models are supported?</summary>
+                <p>KrugerX integrates with OpenAI (GPT-4o), Google Gemini (2.5 Pro), Anthropic (Claude 4), Groq (Llama 3.1), and any local model via Ollama. You bring your own API keys.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="main-footer">
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <div class="footer-logo"><a href="/" style="text-decoration:none;color:inherit">Kruger<span class="highlight">X</span></a></div>
+            <p class="footer-tagline">A next-generation AI-powered browser built for privacy, speed, and intelligence.</p>
+            <div class="footer-socials">
+                <a href="#" class="social-link" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg></a>
+                <a href="#" class="social-link" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                <a href="#" class="social-link" aria-label="Discord"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg></a>
+            </div>
+        </div>
+        <div class="footer-links">
+            <h4>Product</h4>
+            <a href="/#features">Features</a>
+            <a href="/#ai">AI Models</a>
+            <a href="/download">Download</a>
+            <a href="#">Changelog</a>
+        </div>
+        <div class="footer-links">
+            <h4>Company</h4>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Careers</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="footer-links">
+            <h4>Legal</h4>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Security</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 KrugerX Browser. All rights reserved.</p>
+        <p class="footer-bottom-right">Built with ❤ for the open web.</p>
+    </div>
+</footer>
+
+<script>
+// Platform tab switching
+document.querySelectorAll('.dl-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        const platform = tab.dataset.platform;
+        document.querySelectorAll('.dl-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.dl-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('panel-' + platform).classList.add('active');
+        history.replaceState(null, null, '#' + platform);
+    });
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash.substring(1);
+    if (hash) {
+        const tab = document.querySelector(`.dl-tab[data-platform="${hash}"]`);
+        if (tab) tab.click();
+    } else {
+        // Auto-detect OS
+        const userAgent = window.navigator.userAgent.toLowerCase();
+        if (userAgent.includes('mac')) document.querySelector('.dl-tab[data-platform="macos"]').click();
+        else if (userAgent.includes('linux')) document.querySelector('.dl-tab[data-platform="linux"]').click();
+        else if (userAgent.includes('iphone') || userAgent.includes('ipad')) document.querySelector('.dl-tab[data-platform="ios"]').click();
+        else if (userAgent.includes('android')) document.querySelector('.dl-tab[data-platform="android"]').click();
+    }
+});
+
+// Linux sub-method tabs
+document.querySelectorAll('.linux-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        const method = tab.dataset.method;
+        document.querySelectorAll('.linux-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.linux-method').forEach(m => m.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById('method-' + method).classList.add('active');
+    });
+});
+
+// Copy buttons for code blocks
+document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        navigator.clipboard.writeText(btn.dataset.copy).then(() => {
+            const orig = btn.textContent;
+            btn.textContent = 'Copied!';
+            setTimeout(() => btn.textContent = orig, 1800);
+        });
+    });
+});
+
+// Sticky tabs
+const tabsWrap = document.getElementById('dl-tabs');
+const tabsTop = tabsWrap.offsetTop;
+window.addEventListener('scroll', () => {
+    tabsWrap.classList.toggle('sticky', window.scrollY > tabsTop - 70);
+});
+</script>
+{% endblock %}

@@ -418,6 +418,7 @@ section {
 .ai-nodes-container {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     gap: 2rem;
     position: relative;
@@ -427,11 +428,71 @@ section {
     width: 170px;
     padding: 2rem 1.5rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
     border-radius: 24px;
-    transition: transform 0.3s;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.ai-node.expanded {
+    width: 320px;
+    padding: 2rem;
+    background: rgba(255,255,255,0.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.1);
+}
+
+.node-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    text-align: left;
+    margin-top: 0;
+}
+
+.ai-node.expanded .node-details {
+    max-height: 400px;
+    opacity: 1;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.node-details p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.node-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.node-details ul li {
+    font-size: 0.9rem;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.node-details ul li::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: var(--node-color, var(--eldritch-gold));
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--node-color, var(--eldritch-gold));
 }
 
 .ai-node .card-content {
@@ -991,3 +1052,5 @@ section {
 }
 
 .platform-card:hover .platform-sub { color: #888; }
+
+
