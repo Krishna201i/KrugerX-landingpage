@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Live Particle Canvas -->
+<canvas id="mystical-canvas"></canvas>
+
+<!-- Parallax Background Elements -->
+<div class="parallax-bg" data-speed="0.5">
+    <div class="ambient-glow orb-1"></div>
+    <div class="ambient-glow orb-2"></div>
+</div>
+
+<div class="parallax-bg" data-speed="0.2">
+    <div class="mandala-container">
+        <div class="mandala-ring ring-outer"></div>
+        <div class="mandala-ring ring-middle"></div>
+        <div class="mandala-ring ring-inner"></div>
+    </div>
+</div>
+
+<!-- Header (Hardcoded) -->
+<header class="main-header interactive" data-cursor="hover">
+    <div class="logo">Kruger<span class="highlight">X</span></div>
+    <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#ai">AI Models</a>
+        <a href="#download" class="nav-download">Download</a>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <!-- Status Widget -->
+    <div class="status-widget glass-pill interactive" data-cursor="hover">
+        <span id="status-indicator" class="status-dot"></span>
+        <span id="status-text">Checking System Status...</span>
+    </div>
+
+    <h1 class="hero-title">
+        <span class="reveal-text">Experience the Web,</span><br/>
+        <span class="reveal-text highlight">Redefined.</span>
+    </h1>
+    <p class="hero-subtitle reveal-fade">KrugerX is a next-generation AI-powered desktop browser. Built for absolute privacy, blazing speed, and seamless intelligence.</p>
+    
+    <div class="hero-actions reveal-fade">
+        <div class="cta-container interactive" data-cursor="portal">
+            <a href="#download" class="sling-ring-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="download-icon"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span class="btn-text">Download for Windows</span>
+                <div class="btn-glow"></div>
+            </a>
+        </div>
+        <p class="version-info">Version 1.0.0 | Also available for MacOS</p>
+    </div>
+</section>
+
+<!-- Browser UI Mockup (Hardcoded) -->
+<section class="mockup-section reveal-up">
+    <div class="browser-mockup">
+        <div class="mockup-header">
+            <div class="mockup-dots">
+                <span class="dot close"></span>
+                <span class="dot min"></span>
+                <span class="dot max"></span>
+            </div>
+            <div class="mockup-url-bar">
+                <span class="lock-icon">🔒</span> https://krugerx.com/search?q=future+of+browsing
+            </div>
+            <div class="mockup-tabs">
+                <div class="tab active">KrugerX Home</div>
+                <div class="tab">AI Assistant</div>
+            </div>
+        </div>
+        <div class="mockup-body">
+            <div class="mockup-sidebar">
+                <div class="sidebar-item active"></div>
+                <div class="sidebar-item"></div>
+                <div class="sidebar-item"></div>
+                <div class="sidebar-ai-glow"></div>
+            </div>
+            <div class="mockup-content">
+                <div class="content-header"></div>
+                <div class="content-text-1"></div>
+                <div class="content-text-2"></div>
+                <div class="content-text-3"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Feature Grid -->
+<section class="features-section" id="features">
+    <div class="section-header reveal-up">
+        <h2>Built for <span class="highlight">Performance</span></h2>
+        <p>A browser engineered from the ground up with the rigor of a scaled backend.</p>
+    </div>
+    
+    <div class="feature-grid">
+        <!-- Card 1 -->
+        <div class="premium-card feature-card interactive" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-scale="1.05" data-cursor="hover">
+            <div class="card-border"></div>
+            <div class="card-content">
+                <div class="icon-wrapper privacy-icon">
+                    <div class="icon-glow"></div>
+                </div>
+                <h3>Absolute Privacy</h3>
+                <p>Your data never leaves your control. End-to-end encrypted synchronization powered by our secure architecture.</p>
+            </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="premium-card feature-card interactive" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-scale="1.05" data-cursor="hover">
+            <div class="card-border"></div>
+            <div class="card-content">
+                <div class="icon-wrapper speed-icon">
+                    <div class="icon-glow"></div>
+                </div>
+                <h3>Blazing Speed</h3>
+                <p>Lightning-fast page rendering and asynchronous backend processing to warp through the web without lag.</p>
+            </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="premium-card feature-card interactive" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-scale="1.05" data-cursor="hover">
+            <div class="card-border"></div>
+            <div class="card-content">
+                <div class="icon-wrapper sync-icon">
+                    <div class="icon-glow"></div>
+                </div>
+                <h3>Seamless Sync</h3>
+                <p>Instantly synchronize your tabs, history, and preferences across all your devices in real-time.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- AI Engine Section -->
+<section class="ai-section" id="ai">
+    <div class="section-header reveal-up">
+        <h2>Integrated <span class="highlight">AI Models</span></h2>
+        <p>Harness the power of the industry's greatest LLMs directly in your browser sidebar.</p>
+    </div>
+    
+    <div class="ai-nodes-container">
+        <!-- Animated Connector Lines via SVG -->
+        <svg class="ai-connections" width="100%" height="100%">
+            <path class="connection-path" d="" />
+        </svg>
+
+        <div class="premium-card ai-node interactive" data-tilt data-tilt-scale="1.1" data-cursor="hover">
+            <div class="card-border"></div>
+            <div class="card-content">
+                <span class="node-icon">O</span>
+                <span class="node-name">OpenAI</span>
+            </div>
+        </div>
+        <div class="premium-card ai-node interactive" data-tilt data-tilt-scale="1.1" data-cursor="hover">
+            <div class="card-border"></div>
+            <div class="card-content">
+                <span class="node-icon">G</span>
+                <span class="node-name">Gemini</span>
+            </div>
+        </div>
+        <div class="premium-card ai-node interactive" data-tilt data-tilt-scale="1.1" data-cursor="hover">
+            <div class="card-border"></div>
+            <div class="card-content">
+                <span class="node-icon">A</span>
+                <span class="node-name">Anthropic</span>
+            </div>
+        </div>
+        <div class="premium-card ai-node interactive" data-tilt data-tilt-scale="1.1" data-cursor="hover">
+            <div class="card-border"></div>
+            <div class="card-content">
+                <span class="node-icon">Q</span>
+                <span class="node-name">Groq</span>
+            </div>
+        </div>
+        
+        <div class="premium-card ai-node local-node interactive" data-tilt data-tilt-scale="1.1" data-cursor="hover">
+            <div class="card-border local-border"></div>
+            <div class="card-content">
+                <span class="node-icon local-icon">L</span>
+                <span class="node-name local-text">Ollama (Local)</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer (Hardcoded) -->
+<footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-logo">Kruger<span class="highlight">X</span></div>
+        <p>&copy; 2026 KrugerX Browser. All rights reserved.</p>
+    </div>
+</footer>
+
+{% endblock %}
