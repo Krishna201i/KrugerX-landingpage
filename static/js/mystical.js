@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Smooth ring follow loop
     function renderCursor() {
-        ringX += (mouseX - ringX) * 0.15; // easing
-        ringY += (mouseY - ringY) * 0.15;
+        ringX += (mouseX - ringX) * 0.09;
+        ringY += (mouseY - ringY) * 0.09;
         
         cursorRing.style.left = `${ringX}px`;
         cursorRing.style.top = `${ringY}px`;
@@ -164,24 +164,26 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.from(".feature-card", {
         scrollTrigger: {
             trigger: ".feature-grid",
-            start: "top 80%"
+            start: "top 90%"
         },
-        y: 100,
+        y: 60,
         opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: "back.out(1.5)"
+        duration: 0.8,
+        stagger: 0.15,
+        ease: "power2.out",
+        immediateRender: false
     });
 
     gsap.from(".ai-node", {
         scrollTrigger: {
             trigger: ".ai-nodes-container",
-            start: "top 80%"
+            start: "top 90%"
         },
-        scale: 0.5,
+        scale: 0.8,
         opacity: 0,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "elastic.out(1, 0.7)"
+        duration: 0.6,
+        stagger: 0.1,
+        ease: "power2.out",
+        immediateRender: false
     });
 });

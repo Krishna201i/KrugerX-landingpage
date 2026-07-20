@@ -44,13 +44,13 @@
     
     <div class="hero-actions reveal-fade">
         <div class="cta-container interactive" data-cursor="portal">
-            <a href="#download" class="sling-ring-btn">
+            <a href="/download" class="sling-ring-btn">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="download-icon"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                <span class="btn-text">Download for Windows</span>
+                <span class="btn-text">Get KrugerX &mdash; Free</span>
                 <div class="btn-glow"></div>
             </a>
         </div>
-        <p class="version-info">Version 1.0.0 | Also available for MacOS</p>
+        <p class="version-info">Version 1.0.0 &nbsp;·&nbsp; Windows &nbsp;·&nbsp; macOS &nbsp;·&nbsp; Linux &nbsp;·&nbsp; iOS &amp; Android</p>
     </div>
 </section>
 
@@ -73,16 +73,41 @@
         </div>
         <div class="mockup-body">
             <div class="mockup-sidebar">
-                <div class="sidebar-item active"></div>
-                <div class="sidebar-item"></div>
-                <div class="sidebar-item"></div>
-                <div class="sidebar-ai-glow"></div>
+                <div class="sidebar-item active" title="Home">⌂</div>
+                <div class="sidebar-item" title="Privacy">🛡</div>
+                <div class="sidebar-item" title="Extensions">⚡</div>
+                <div class="sidebar-item" title="Settings">⚙</div>
+                <div class="sidebar-ai-glow" title="AI">✦</div>
             </div>
             <div class="mockup-content">
-                <div class="content-header"></div>
-                <div class="content-text-1"></div>
-                <div class="content-text-2"></div>
-                <div class="content-text-3"></div>
+                <div class="mockup-search-results">
+                    <div class="search-result-item featured">
+                        <div class="result-badge">KrugerX AI Summary</div>
+                        <div class="result-title">The Future of Browsing: AI-Native Experiences</div>
+                        <div class="result-snippet">KrugerX redefines what a browser can do — with built-in LLM integration, zero-knowledge sync, and sub-50ms render times across all devices.</div>
+                        <div class="result-tags"><span>Privacy</span><span>Speed</span><span>AI</span></div>
+                    </div>
+                    <div class="search-result-item">
+                        <div class="result-url">krugerx.com › features</div>
+                        <div class="result-title">Absolute Privacy by Design</div>
+                        <div class="result-snippet">End-to-end encrypted sync, no telemetry, no tracking. Your data never leaves your device unencrypted.</div>
+                    </div>
+                    <div class="search-result-item">
+                        <div class="result-url">krugerx.com › speed</div>
+                        <div class="result-title">Blazing Speed — Sub-50ms Rendering</div>
+                        <div class="result-snippet">Asynchronous rendering pipeline and intelligent prefetching deliver pages before you even finish clicking.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mockup-ai-panel">
+                <div class="ai-panel-header">✦ AI Assistant</div>
+                <div class="ai-panel-msg ai">I found 3 key insights about the future of browsing for you.</div>
+                <div class="ai-panel-msg user">Summarize privacy features</div>
+                <div class="ai-panel-msg ai">KrugerX uses zero-knowledge encryption — even we can't read your data.</div>
+                <div class="ai-panel-input">
+                    <span>Ask anything...</span>
+                    <div class="ai-send-btn">↑</div>
+                </div>
             </div>
         </div>
     </div>
@@ -140,55 +165,136 @@
     </div>
     
     <div class="ai-nodes-container">
-        <!-- Animated Connector Lines via SVG -->
-        <svg class="ai-connections" width="100%" height="100%">
-            <path class="connection-path" d="" />
-        </svg>
-
-        <div class="premium-card ai-node interactive" data-tilt data-tilt-scale="1.1" data-cursor="hover">
-            <div class="card-border"></div>
+        <div class="premium-card ai-node interactive" data-tilt data-tilt-scale="1.08" data-cursor="hover" style="--node-color:#10a37f">
+            <div class="card-border" style="background:linear-gradient(135deg,rgba(16,163,127,0.5),rgba(16,163,127,0.05))"></div>
             <div class="card-content">
-                <span class="node-icon">O</span>
+                <div class="node-logo" style="background:#10a37f">GPT</div>
                 <span class="node-name">OpenAI</span>
+                <span class="node-model">GPT-4o</span>
             </div>
         </div>
-        <div class="premium-card ai-node interactive" data-tilt data-tilt-scale="1.1" data-cursor="hover">
-            <div class="card-border"></div>
+        <div class="premium-card ai-node interactive" data-tilt data-tilt-scale="1.08" data-cursor="hover" style="--node-color:#4285f4">
+            <div class="card-border" style="background:linear-gradient(135deg,rgba(66,133,244,0.5),rgba(66,133,244,0.05))"></div>
             <div class="card-content">
-                <span class="node-icon">G</span>
+                <div class="node-logo" style="background:linear-gradient(135deg,#4285f4,#ea4335,#fbbc05,#34a853)">G</div>
                 <span class="node-name">Gemini</span>
+                <span class="node-model">2.5 Pro</span>
             </div>
         </div>
-        <div class="premium-card ai-node interactive" data-tilt data-tilt-scale="1.1" data-cursor="hover">
-            <div class="card-border"></div>
+        <div class="premium-card ai-node interactive" data-tilt data-tilt-scale="1.08" data-cursor="hover" style="--node-color:#c96442">
+            <div class="card-border" style="background:linear-gradient(135deg,rgba(201,100,66,0.5),rgba(201,100,66,0.05))"></div>
             <div class="card-content">
-                <span class="node-icon">A</span>
+                <div class="node-logo" style="background:linear-gradient(135deg,#c96442,#e8855e)">✦</div>
                 <span class="node-name">Anthropic</span>
+                <span class="node-model">Claude 4</span>
             </div>
         </div>
-        <div class="premium-card ai-node interactive" data-tilt data-tilt-scale="1.1" data-cursor="hover">
-            <div class="card-border"></div>
+        <div class="premium-card ai-node interactive" data-tilt data-tilt-scale="1.08" data-cursor="hover" style="--node-color:#f55036">
+            <div class="card-border" style="background:linear-gradient(135deg,rgba(245,80,54,0.5),rgba(245,80,54,0.05))"></div>
             <div class="card-content">
-                <span class="node-icon">Q</span>
+                <div class="node-logo" style="background:linear-gradient(135deg,#f55036,#ff7a63)">⚡</div>
                 <span class="node-name">Groq</span>
+                <span class="node-model">Llama 3.1</span>
             </div>
         </div>
-        
-        <div class="premium-card ai-node local-node interactive" data-tilt data-tilt-scale="1.1" data-cursor="hover">
+        <div class="premium-card ai-node local-node interactive" data-tilt data-tilt-scale="1.08" data-cursor="hover" style="--node-color:#00E676">
             <div class="card-border local-border"></div>
             <div class="card-content">
-                <span class="node-icon local-icon">L</span>
-                <span class="node-name local-text">Ollama (Local)</span>
+                <div class="node-logo" style="background:linear-gradient(135deg,#00E676,#00b359)">🦙</div>
+                <span class="node-name local-text">Ollama</span>
+                <span class="node-model local-text">Local · Private</span>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Footer (Hardcoded) -->
+<!-- Download CTA Strip -->
+<section class="cta-strip" id="download">
+    <div class="cta-strip-inner reveal-up">
+        <h2>Ready to Browse <span class="highlight">Without Limits?</span></h2>
+        <p>Available on every platform you live on &mdash; desktop, server, and mobile.</p>
+        <div class="platform-grid">
+            <a href="#" class="platform-card interactive" data-cursor="hover">
+                <div class="platform-icon">
+                    <!-- Windows logo -->
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+                </div>
+                <span class="platform-name">Windows</span>
+                <span class="platform-sub">10 / 11 · x64 &amp; ARM</span>
+            </a>
+            <a href="#" class="platform-card interactive" data-cursor="hover">
+                <div class="platform-icon">
+                    <!-- Apple logo -->
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg>
+                </div>
+                <span class="platform-name">macOS</span>
+                <span class="platform-sub">12+ · Apple Silicon &amp; Intel</span>
+            </a>
+            <a href="#" class="platform-card interactive" data-cursor="hover">
+                <div class="platform-icon">
+                    <!-- Linux Tux -->
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 0 0-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.06.045.12.078.182.23.49.49.716.54.924a2.65 2.65 0 0 1-.027.443c-.07.527-.26 1.2-.197 1.795.095.884.636 1.7 1.685 1.7.876 0 1.54-.52 1.858-1.273.4-.96.364-2.166-.177-3.099-.227-.39-.512-.71-.761-.96a4.97 4.97 0 0 0 .108-.783c.048-.498.016-1.01-.103-1.494-.174-.705-.543-1.268-1.194-1.596.076-.118.14-.24.196-.362.18-.43.26-.92.196-1.383a2.784 2.784 0 0 0-.263-.867 2.47 2.47 0 0 0 .08-.196c.253-.777.11-1.714-.098-2.585-.192-.78-.52-1.512-.93-2.116-.54-.805-1.195-1.44-1.77-1.86-.486-.363-.91-.618-1.248-.814a4.71 4.71 0 0 0-.343-.184c-.17-.088-.334-.165-.485-.23-.31-.13-.566-.228-.786-.3a2.884 2.884 0 0 0-.38-.088c-.154-.027-.312-.04-.474-.04z"/></svg>
+                </div>
+                <span class="platform-name">Linux</span>
+                <span class="platform-sub">.deb / .rpm / AppImage</span>
+            </a>
+            <a href="#" class="platform-card interactive" data-cursor="hover">
+                <div class="platform-icon">
+                    <!-- iOS App Store -->
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M8.809 0c-.48.002-.96.182-1.326.548L.548 7.483A1.875 1.875 0 0 0 0 8.809v6.382c0 .48.182.96.548 1.326l6.935 6.935c.366.366.846.548 1.326.548h6.382c.48 0 .96-.182 1.326-.548l6.935-6.935c.366-.366.548-.846.548-1.326V8.809a1.875 1.875 0 0 0-.548-1.326L16.517.548A1.875 1.875 0 0 0 15.191 0zm3.196 4.5a.75.75 0 0 1 .75.75v3.75h3.75a.75.75 0 0 1 0 1.5h-3.75v3.75a.75.75 0 0 1-1.5 0V10.5H7.505a.75.75 0 0 1 0-1.5h3.75V5.25a.75.75 0 0 1 .75-.75z"/></svg>
+                </div>
+                <span class="platform-name">iOS</span>
+                <span class="platform-sub">iPhone &amp; iPad · iOS 16+</span>
+            </a>
+            <a href="#" class="platform-card interactive" data-cursor="hover">
+                <div class="platform-icon">
+                    <!-- Android -->
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4483-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993.0001.5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4483-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993 0 .5511-.4483.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 0 0-.1521-.5676.416.416 0 0 0-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1367 1.0729L4.841 5.4207a.4161.4161 0 0 0-.5677-.1521.4157.4157 0 0 0-.1521.5676l1.9973 3.4592C2.6889 10.1867.3432 13.2754 0 17.0082h24c-.3435-3.7328-2.6892-6.8215-6.1185-8.6868"/></svg>
+                </div>
+                <span class="platform-name">Android</span>
+                <span class="platform-sub">Android 10+ · ARM64</span>
+            </a>
+        </div>
+        <p class="cta-version">Version 1.0.0 &nbsp;·&nbsp; Free Forever &nbsp;·&nbsp; No Telemetry &nbsp;·&nbsp; Open Source</p>
+    </div>
+</section>
+
+<!-- Footer -->
 <footer class="main-footer">
-    <div class="footer-content">
-        <div class="footer-logo">Kruger<span class="highlight">X</span></div>
+    <div class="footer-grid">
+        <div class="footer-brand">
+            <div class="footer-logo">Kruger<span class="highlight">X</span></div>
+            <p class="footer-tagline">A next-generation AI-powered browser built for privacy, speed, and intelligence.</p>
+            <div class="footer-socials">
+                <a href="#" class="social-link" title="GitHub" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg></a>
+                <a href="#" class="social-link" title="Twitter/X" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                <a href="#" class="social-link" title="Discord" aria-label="Discord"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg></a>
+            </div>
+        </div>
+        <div class="footer-links">
+            <h4>Product</h4>
+            <a href="#features">Features</a>
+            <a href="#ai">AI Models</a>
+            <a href="#download">Download</a>
+            <a href="#">Changelog</a>
+        </div>
+        <div class="footer-links">
+            <h4>Company</h4>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Careers</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="footer-links">
+            <h4>Legal</h4>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Security</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
         <p>&copy; 2026 KrugerX Browser. All rights reserved.</p>
+        <p class="footer-bottom-right">Built with ❤ for the open web.</p>
     </div>
 </footer>
 

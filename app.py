@@ -9,6 +9,10 @@ app.config['SECRET_KEY'] = 'mystical-secret-key-12345'
 def index():
     return render_template('index.html')
 
+@app.route('/download', methods=['GET'])
+def download():
+    return render_template('download.html')
+
 @app.route('/status', methods=['GET'])
 async def backend_status():
     """Asynchronously ping the FastAPI backend health endpoint"""
